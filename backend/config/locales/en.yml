@@ -1,0 +1,6 @@
+en:
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      invalid: "is invalid"
+      blank: "is required"

@@ -1,0 +1,12 @@
+version: '3'
+services:
+  frontend:
+    build: .
+    working_dir: /usr/app/
+    volumes:
+      - ./:/usr/app/
+    command: yarn start --port 3000
+    ports:
+      - "3000:3000"
+    expose:
+      - "3000"

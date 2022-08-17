@@ -1,0 +1,9 @@
+version: "3"
+services:
+  test2backend:
+    build: .
+    command: bash -c "rm -f tmp/pids/server.pid && rails db:migrate && bundle exec rails s -p 45000 -b '0.0.0.0'"
+    volumes:
+      - .:/myapp
+    ports:
+      - "45000:45000"

@@ -1,0 +1,59 @@
+<h2>Total</h2>
+<table style="border: 1px solid">
+  <thead>
+  <tr>
+    <td>Total exchange fee</td>
+    <td>Total transactions</td>
+    <td>Total success transactions</td>
+  </tr>
+  </thead>
+  <%@total.each do |t| %>
+    <tr>
+      <td><%='%.8f' % t['sum'] %></td>
+      <td><%=t['total'] %></td>
+      <td><%=t['total_success'] %></td>
+    </tr>
+  <%end%>
+</table>
+
+<h2>Transactions</h2>
+<table style="border: 1px solid">
+  <thead>
+    <tr>
+      <td>Id</td>
+      <td>Data/time</td>
+      <td>Email</td>
+      <td>Txid</td>
+      <td>From</td>
+      <td>To</td>
+      <td>Exchange rate</td>
+      <td>Exchange fee</td>
+      <td>Status</td>
+    </tr>
+  </thead>
+  <%@transactions.each do |t| %>
+    <tr>
+      <td><%=t.id %></td>
+      <td><%=t.dt %></td>
+      <td><%=t.email %></td>
+      <td><%=t.txid %></td>
+      <td><%=t.fund_from %></td>
+      <td><%=t.fund_to %></td>
+      <td><%='%.8f' % t.exchange_rate %></td>
+      <td><%='%.8f' %t.exchange_fee %></td>
+      <td><%=t.status %></td>
+    </tr>
+  <%end%>
+</table>
+
+<style lang="css">
+    table{
+        width: 100%;
+        border-collapse:collapse;
+        border:1px solid black;
+    }
+
+    table td{
+        border:1px solid black;
+    }
+</style>
